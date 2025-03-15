@@ -1,0 +1,38 @@
+name: Weekly Run and Push
+
+on:
+  schedule:
+    - cron: '0 0 * * 3'
+  workflow_dispatch:
+
+jobs:
+  run_notebook:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests beautifulsoup4 jupyter nbconvert
+
+      - name: Run Jupyter Notebook
+        run: |
+          jupyter nbconvert --execute --to notebook --inplace db.ipynb
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "kaganberberoglu"
+          git config --local user.email "kaganberbero@gmail.com"
+          git add .
+          git commit -m "Automated weekly update"
+          git push origin main

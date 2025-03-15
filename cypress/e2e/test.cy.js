@@ -1,0 +1,21 @@
+describe('Does the test work properly?', () => {
+
+    it('Do the login and signup pages work?', () => {
+        cy.visit('http://localhost:3000/')
+        cy.get('[data-cy=signup]').click()
+        cy.get('[data-cy=email]')
+            .type('kgn@gmail.com')
+        cy.get('[data-cy=username]')
+            .type('kgn')
+        cy.get('[data-cy=password]')
+            .type('kgn1789')
+        cy.get('[data-cy=control-password]')
+            .type('kgn1789')
+        cy.get('[data-cy=to-login]').click()
+        cy.get('[data-cy=login-username]')
+            .type('kgn')
+        cy.get('[data-cy=login-password]')
+            .type('kgn1789')
+        cy.get('[data-cy=login]').click()
+    })
+})
