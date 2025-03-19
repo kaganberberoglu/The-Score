@@ -1683,7 +1683,7 @@ const Play = () => {
                                                     {randomGK.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -1796,48 +1796,58 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
+                                                                            G + A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "KK:" : "RC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -1856,7 +1866,7 @@ const Play = () => {
                                                     {randomDF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -2004,48 +2014,58 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
+                                                                            G + A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "KK:" : "RC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -2064,7 +2084,7 @@ const Play = () => {
                                                     {randomMF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -2237,48 +2257,58 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
+                                                                            G + A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "KK:" : "RC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -2297,7 +2327,7 @@ const Play = () => {
                                                     {randomFW.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -2434,48 +2464,58 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Takım:" : "Team:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                            <p className="truncate">
+                                                                                {changeLang ? "Yaş:" : "Age:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
+                                                                            G + A: {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "KK:" : "RC:"} {filterRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -2667,7 +2707,7 @@ const Play = () => {
                                                     {rivalGK.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -2745,49 +2785,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -2798,7 +2847,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -2809,7 +2858,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -2820,7 +2869,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -2831,7 +2880,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -2842,7 +2891,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -2853,7 +2902,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -2864,7 +2913,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -2875,7 +2924,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
@@ -2902,7 +2951,7 @@ const Play = () => {
                                                     {rivalDF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -3015,49 +3064,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -3068,7 +3126,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -3079,7 +3137,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -3090,7 +3148,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -3101,7 +3159,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -3112,7 +3170,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -3123,7 +3181,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -3134,7 +3192,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -3145,7 +3203,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
@@ -3172,7 +3230,7 @@ const Play = () => {
                                                     {rivalMF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -3310,49 +3368,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -3363,7 +3430,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -3374,7 +3441,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -3385,7 +3452,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -3396,7 +3463,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -3407,7 +3474,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -3418,7 +3485,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -3429,7 +3496,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -3440,7 +3507,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
@@ -3467,7 +3534,7 @@ const Play = () => {
                                                     {rivalFW.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -3569,49 +3636,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -3622,7 +3698,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -3633,7 +3709,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -3644,7 +3720,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -3655,7 +3731,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -3666,7 +3742,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -3677,7 +3753,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -3688,7 +3764,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -3699,7 +3775,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
@@ -4042,7 +4118,7 @@ const Play = () => {
                                                     {notRandomGK.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -4155,48 +4231,56 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
+                                                                            G + A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "KK:" : "RC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -4215,7 +4299,7 @@ const Play = () => {
                                                     {notRandomDF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -4363,45 +4447,56 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            G + A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                        </p>
+                                                                        <p>
+                                                                            {changeLang ? "KK:" : "RC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -4420,7 +4515,7 @@ const Play = () => {
                                                     {notRandomMF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -4593,48 +4688,56 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
+                                                                            G + A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "KK:" : "RC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -4653,7 +4756,7 @@ const Play = () => {
                                                     {notRandomFW.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         <Link to="/league/versus">
                                                                             <button
@@ -4790,48 +4893,56 @@ const Play = () => {
                                                                                 </button>
                                                                         }
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
-                                                                    </p>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} <span className="font-bold">{item.player}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].team : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].age : ""}</span>)}
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
+                                                                            {changeLang ? "TS:" : "TR:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].tr : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
+                                                                            {changeLang ? "D:" : "V:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].value : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
+                                                                            {changeLang ? "OM:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].mp : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
+                                                                            {changeLang ? "OD:" : "MP:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].min : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
+                                                                            G: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].g : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
+                                                                            A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].a : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
+                                                                            G + A: {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].ga : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
+                                                                            {changeLang ? "SK:" : "YC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].yc : ""}</span>)}
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
+                                                                            {changeLang ? "KK:" : "RC:"} {filterNotRandomPlayer.map(element => <span className="font-bold">{element[0].player === item.player ? element[0].rc : ""}</span>)}
                                                                         </p>
                                                                     </div>
                                                                     :
@@ -5023,7 +5134,7 @@ const Play = () => {
                                                     {rivalGK.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -5101,49 +5212,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -5154,7 +5274,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -5165,7 +5285,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -5176,7 +5296,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -5187,7 +5307,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -5198,7 +5318,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -5209,7 +5329,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -5220,7 +5340,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -5231,7 +5351,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
@@ -5258,7 +5378,7 @@ const Play = () => {
                                                     {rivalDF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -5371,49 +5491,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -5424,7 +5553,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -5435,7 +5564,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -5446,7 +5575,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -5457,7 +5586,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -5468,7 +5597,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -5479,7 +5608,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -5490,7 +5619,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -5501,7 +5630,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
@@ -5528,7 +5657,7 @@ const Play = () => {
                                                     {rivalMF.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -5666,49 +5795,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -5719,7 +5857,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -5730,7 +5868,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -5741,7 +5879,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -5752,7 +5890,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -5763,7 +5901,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -5774,7 +5912,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -5785,7 +5923,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -5796,7 +5934,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
@@ -5823,7 +5961,7 @@ const Play = () => {
                                                     {rivalFW.map((item) => {
                                                         return (
                                                             <div className="bg-stone-300 rounded py-0.5 px-1 mb-1 font-medium border-2 border-black drop-shadow-md">
-                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64 overflow-hidden text-ellipsis">
+                                                                <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                     <div className="flex flex-row">
                                                                         {
                                                                             item.showRival ?
@@ -5925,49 +6063,58 @@ const Play = () => {
                                                                             }
                                                                         </button>
                                                                     </div>
-                                                                    <p>
-                                                                        {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Oyuncu:" : "Player:"} {
-                                                                            item.showRival ?
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Numara:" : "Number:"} <span className="font-bold">{item.number}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Oyuncu:" : "Player:"} {
+                                                                                item.showRival ?
+                                                                                    <span className="font-bold">
+                                                                                        {item.player}
+                                                                                    </span>
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Oyuncu" : "Player"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Takım:" : "Team:"} {
+                                                                                item.showRival ? filterRivalPlayer.map(element =>
+                                                                                    <span className="font-bold">
+                                                                                        {element[0].Id === item.id ? element[0].Team : ""}
+                                                                                    </span>)
+                                                                                    :
+                                                                                    <span className="bg-black">
+                                                                                        {changeLang ? "Takım" : "Team"}
+                                                                                    </span>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                    <div className="w-16 md:w-40 lg:w-52 xl:w-64">
+                                                                        <p className="truncate">
+                                                                            {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
-                                                                                    {item.player}
-                                                                                </span>
+                                                                                    {element[0].Id === item.id ? element[0].Age : ""}
+                                                                                </span>)
                                                                                 :
                                                                                 <span className="bg-black">
-                                                                                    {changeLang ? "Oyuncu" : "Player"}
+                                                                                    {changeLang ? "Yaş" : "Age"}
                                                                                 </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Takım:" : "Team:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Team : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Takım" : "Team"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
-                                                                    <p>
-                                                                        {changeLang ? "Yaş:" : "Age:"} {item.showRival ? filterRivalPlayer.map(element =>
-                                                                            <span className="font-bold">
-                                                                                {element[0].Id === item.id ? element[0].Age : ""}
-                                                                            </span>)
-                                                                            :
-                                                                            <span className="bg-black">
-                                                                                {changeLang ? "Yaş" : "Age"}
-                                                                            </span>
-                                                                        }
-                                                                    </p>
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 {item.accordionNumber ?
                                                                     <div className="grid justify-items-start w-16 md:w-40 lg:w-52 xl:w-64">
                                                                         <br />
                                                                         <p>
-                                                                            {changeLang ? "Takım Sıralaması:" : "Team Ranking:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "TS:" : "TR:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].TR : ""}
                                                                                 </span>)
@@ -5978,7 +6125,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Değer:" : "Value:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "D:" : "V:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Value : ""}
                                                                                 </span>)
@@ -5989,7 +6136,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Maç:" : "Matches Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OM:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].MP : ""}
                                                                                 </span>)
@@ -6000,7 +6147,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Oynanan Dakika:" : "Minutes Played:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "OD:" : "MP:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].Min : ""}
                                                                                 </span>)
@@ -6011,7 +6158,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol:" : "Goals:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].G : ""}
                                                                                 </span>)
@@ -6022,7 +6169,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Asist:" : "Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].A : ""}
                                                                                 </span>)
@@ -6033,7 +6180,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Gol + Asist:" : "Goals + Assists:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            G + A: {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0]["G+A"] : ""}
                                                                                 </span>)
@@ -6044,7 +6191,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Sarı Kart:" : "Yellow Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "SK:" : "YC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].YC : ""}
                                                                                 </span>)
@@ -6055,7 +6202,7 @@ const Play = () => {
                                                                             }
                                                                         </p>
                                                                         <p>
-                                                                            {changeLang ? "Kırmızı Kart:" : "Red Card:"} {item.showRival ? filterRivalPlayer.map(element =>
+                                                                            {changeLang ? "KK:" : "RC:"} {item.showRival ? filterRivalPlayer.map(element =>
                                                                                 <span className="font-bold">
                                                                                     {element[0].Id === item.id ? element[0].RC : ""}
                                                                                 </span>)
