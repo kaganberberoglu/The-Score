@@ -1211,7 +1211,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1225,7 +1225,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1248,7 +1248,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1262,7 +1262,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1285,7 +1285,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1299,7 +1299,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1322,7 +1322,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1336,7 +1336,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1362,7 +1362,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1376,7 +1376,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1399,7 +1399,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1413,7 +1413,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1436,7 +1436,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1450,7 +1450,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1473,7 +1473,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -1487,7 +1487,7 @@ const Play = () => {
                                                         <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                             <img className="h-7 lg:h-8 xl:h-8 w-7 lg:w-8 xl:w-8 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                             <center>
-                                                                <div className="flex justify-center w-16 mx-0.5">
+                                                                <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                     <p className="truncate font-bold">
                                                                         {item.number}-{item.player.toUpperCase()}
                                                                     </p>
@@ -2536,7 +2536,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -2550,7 +2550,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -2573,7 +2573,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -2587,7 +2587,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -2610,7 +2610,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -2624,7 +2624,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -2647,7 +2647,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -2661,7 +2661,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -3804,7 +3804,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -3818,7 +3818,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
@@ -3841,7 +3841,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -3855,7 +3855,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
@@ -3878,7 +3878,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -3892,7 +3892,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
@@ -3915,7 +3915,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -3929,7 +3929,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
@@ -4963,7 +4963,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -4977,7 +4977,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -5000,7 +5000,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -5014,7 +5014,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -5037,7 +5037,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -5051,7 +5051,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -5074,7 +5074,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -5088,7 +5088,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -6231,7 +6231,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -6245,7 +6245,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="gk" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
@@ -6268,7 +6268,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -6282,7 +6282,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="df" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
@@ -6305,7 +6305,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -6319,7 +6319,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="mf" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
@@ -6342,7 +6342,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-red-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-{item.player.toUpperCase()}
                                                                                 </p>
@@ -6356,7 +6356,7 @@ const Play = () => {
                                                                     <div className="grid justify-items-center p-0.5 rounded-lg border-2 border-black bg-stone-300 drop-shadow-md">
                                                                         <img className="h-7 w-7 my-0.5" alt="fw" src={require(`../assets/icons/${item.image}.png`)} />
                                                                         <center>
-                                                                            <div className="flex justify-center w-16 mx-0.5">
+                                                                            <div className="flex justify-center w-12 md:w-16 lg:w-16 xl:w-16 mx-0.5">
                                                                                 <p className="truncate font-bold">
                                                                                     {item.number}-<span className={item.showRival ? "" : "bg-black"}>{item.player.toUpperCase()}</span>
                                                                                 </p>
