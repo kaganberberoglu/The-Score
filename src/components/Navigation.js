@@ -349,383 +349,1107 @@ const Navigation = () => {
                 <button
                     className="hover:drop-shadow-xl hover:saturate-0"
                     onClick={(e) => {
-                        Swal.fire({
-                            customClass: {
-                                popup: "sweet-alert"
-                            },
-                            icon: "warning",
-                            title: changeLang ? "Emin misin?" : "Are you sure?",
-                            text: changeLang ? "Tüm seçimlerin iptal edilecek ve bunu daha sonra geri alamayacaksın!" : "All your choices will be canceled and won't be able to revert this!",
-                            focusConfirm: false,
-                            showCancelButton: true,
-                            confirmButtonColor: "#3482b3",
-                            cancelButtonColor: "#d33",
-                            confirmButtonText: changeLang ? "Evet" : "Yes",
-                            cancelButtonText: changeLang ? "Vazgeç" : "Cancel"
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                e.preventDefault();
+                        e.preventDefault();
+                        if (teamCalc() !== 0 && match === true) {
+                            Swal.fire({
+                                customClass: {
+                                    popup: "sweet-alert"
+                                },
+                                icon: "warning",
+                                title: changeLang ? "Emin misin?" : "Are you sure?",
+                                text: changeLang ? "Tüm seçimlerin iptal edilecek ve bunu daha sonra geri alamayacaksın!" : "All your choices will be canceled and won't be able to revert this!",
+                                focusConfirm: false,
+                                showCancelButton: true,
+                                confirmButtonColor: "#3482b3",
+                                cancelButtonColor: "#d33",
+                                confirmButtonText: changeLang ? "Evet" : "Yes",
+                                cancelButtonText: changeLang ? "Vazgeç" : "Cancel"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    navigate("/");
+                                    setMatch(false);
+                                    setRivalTotalScore(0);
+                                    setYourTotalScore(0);
 
-                                navigate("/");
-                                setMatch(false);
-                                setRivalTotalScore(0);
-                                setYourTotalScore(0);
+                                    setShowNumberOne(false);
+                                    setShowNumberTwo(false);
+                                    setShowNumberThree(false);
+                                    setShowNumberFour(false);
+                                    setShowNumberFive(false);
+                                    setShowNumberSix(false);
+                                    setShowNumberSeven(false);
+                                    setShowNumberEight(false);
+                                    setShowNumberNine(false);
+                                    setShowNumberTen(false);
+                                    setShowNumberEleven(false);
 
-                                setShowNumberOne(false);
-                                setShowNumberTwo(false);
-                                setShowNumberThree(false);
-                                setShowNumberFour(false);
-                                setShowNumberFive(false);
-                                setShowNumberSix(false);
-                                setShowNumberSeven(false);
-                                setShowNumberEight(false);
-                                setShowNumberNine(false);
-                                setShowNumberTen(false);
-                                setShowNumberEleven(false);
+                                    setNumberOne({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 8,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "GK",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberTwo({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 8,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "GK",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberThree({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFour({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFive({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberSix({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberSeven({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberEight({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberNine({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberTen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberEleven({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberTwelve({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberThirteen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF/MF/FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFourteen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF/MF/FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFifteen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF/MF/FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
 
-                                setNumberOne({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 8,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "GK",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberTwo({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 8,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "GK",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberThree({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "DF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberFour({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "DF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberFive({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "DF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberSix({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "DF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberSeven({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "MF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberEight({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "MF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberNine({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "MF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberTen({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "MF",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberEleven({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "FW",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberTwelve({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "FW",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberThirteen({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "DF/MF/FW",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberFourteen({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "DF/MF/FW",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
-                                setNumberFifteen({
-                                    id: 0,
-                                    icon: false,
-                                    bg: false,
-                                    image: 7,
-                                    player: "Player",
-                                    team: "",
-                                    tr: "",
-                                    value: 0,
-                                    nation: "",
-                                    flagcode: "",
-                                    pos: "DF/MF/FW",
-                                    age: 0,
-                                    mp: 0,
-                                    min: 0,
-                                    g: 0,
-                                    a: 0,
-                                    ga: 0,
-                                    yc: 0,
-                                    rc: 0
-                                });
+                                    setGoalkeeperOne("Player");
+                                    setGoalkeeperTwo("Player");
+                                    setDefenceOne("Player");
+                                    setDefenceTwo("Player");
+                                    setDefenceThree("Player");
+                                    setDefenceFour("Player");
+                                    setMidOne("Player");
+                                    setMidTwo("Player");
+                                    setMidThree("Player");
+                                    setMidFour("Player");
+                                    setMidFive("Player");
+                                    setForwOne("Player");
+                                    setForwTwo("Player");
+                                    setForwThree("Player");
+                                    setJokerOne("Player");
+                                    setJokerTwo("Player");
+                                    setJokerThree("Player");
 
-                                setGoalkeeperOne("Player");
-                                setGoalkeeperTwo("Player");
-                                setDefenceOne("Player");
-                                setDefenceTwo("Player");
-                                setDefenceThree("Player");
-                                setDefenceFour("Player");
-                                setMidOne("Player");
-                                setMidTwo("Player");
-                                setMidThree("Player");
-                                setMidFour("Player");
-                                setMidFive("Player");
-                                setForwOne("Player");
-                                setForwTwo("Player");
-                                setForwThree("Player");
-                                setJokerOne("Player");
-                                setJokerTwo("Player");
-                                setJokerThree("Player");
+                                    setMoney(400);
+                                }
+                            });
+                        } else if (teamCalc() !== 0 && match === false) {
+                            Swal.fire({
+                                customClass: {
+                                    popup: "sweet-alert"
+                                },
+                                icon: "warning",
+                                title: changeLang ? "Emin misin?" : "Are you sure?",
+                                text: changeLang ? "Tüm seçimlerin iptal edilecek ve bunu daha sonra geri alamayacaksın!" : "All your choices will be canceled and won't be able to revert this!",
+                                focusConfirm: false,
+                                showCancelButton: true,
+                                confirmButtonColor: "#3482b3",
+                                cancelButtonColor: "#d33",
+                                confirmButtonText: changeLang ? "Evet" : "Yes",
+                                cancelButtonText: changeLang ? "Vazgeç" : "Cancel"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    navigate("/");
+                                    setMatch(false);
+                                    setRivalTotalScore(0);
+                                    setYourTotalScore(0);
 
-                                setMoney(400);
-                            }
-                        });
+                                    setShowNumberOne(false);
+                                    setShowNumberTwo(false);
+                                    setShowNumberThree(false);
+                                    setShowNumberFour(false);
+                                    setShowNumberFive(false);
+                                    setShowNumberSix(false);
+                                    setShowNumberSeven(false);
+                                    setShowNumberEight(false);
+                                    setShowNumberNine(false);
+                                    setShowNumberTen(false);
+                                    setShowNumberEleven(false);
+
+                                    setNumberOne({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 8,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "GK",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberTwo({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 8,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "GK",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberThree({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFour({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFive({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberSix({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberSeven({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberEight({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberNine({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberTen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "MF",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberEleven({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberTwelve({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberThirteen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF/MF/FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFourteen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF/MF/FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+                                    setNumberFifteen({
+                                        id: 0,
+                                        icon: false,
+                                        bg: false,
+                                        image: 7,
+                                        player: "Player",
+                                        team: "",
+                                        tr: "",
+                                        value: 0,
+                                        nation: "",
+                                        flagcode: "",
+                                        pos: "DF/MF/FW",
+                                        age: 0,
+                                        mp: 0,
+                                        min: 0,
+                                        g: 0,
+                                        a: 0,
+                                        ga: 0,
+                                        yc: 0,
+                                        rc: 0
+                                    });
+
+                                    setGoalkeeperOne("Player");
+                                    setGoalkeeperTwo("Player");
+                                    setDefenceOne("Player");
+                                    setDefenceTwo("Player");
+                                    setDefenceThree("Player");
+                                    setDefenceFour("Player");
+                                    setMidOne("Player");
+                                    setMidTwo("Player");
+                                    setMidThree("Player");
+                                    setMidFour("Player");
+                                    setMidFive("Player");
+                                    setForwOne("Player");
+                                    setForwTwo("Player");
+                                    setForwThree("Player");
+                                    setJokerOne("Player");
+                                    setJokerTwo("Player");
+                                    setJokerThree("Player");
+
+                                    setMoney(400);
+                                }
+                            });
+                        } else {
+                            navigate("/");
+                            setMatch(false);
+                            setRivalTotalScore(0);
+                            setYourTotalScore(0);
+
+                            setShowNumberOne(false);
+                            setShowNumberTwo(false);
+                            setShowNumberThree(false);
+                            setShowNumberFour(false);
+                            setShowNumberFive(false);
+                            setShowNumberSix(false);
+                            setShowNumberSeven(false);
+                            setShowNumberEight(false);
+                            setShowNumberNine(false);
+                            setShowNumberTen(false);
+                            setShowNumberEleven(false);
+
+                            setNumberOne({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 8,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "GK",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberTwo({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 8,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "GK",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberThree({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "DF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberFour({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "DF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberFive({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "DF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberSix({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "DF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberSeven({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "MF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberEight({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "MF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberNine({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "MF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberTen({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "MF",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberEleven({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "FW",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberTwelve({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "FW",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberThirteen({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "DF/MF/FW",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberFourteen({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "DF/MF/FW",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+                            setNumberFifteen({
+                                id: 0,
+                                icon: false,
+                                bg: false,
+                                image: 7,
+                                player: "Player",
+                                team: "",
+                                tr: "",
+                                value: 0,
+                                nation: "",
+                                flagcode: "",
+                                pos: "DF/MF/FW",
+                                age: 0,
+                                mp: 0,
+                                min: 0,
+                                g: 0,
+                                a: 0,
+                                ga: 0,
+                                yc: 0,
+                                rc: 0
+                            });
+
+                            setGoalkeeperOne("Player");
+                            setGoalkeeperTwo("Player");
+                            setDefenceOne("Player");
+                            setDefenceTwo("Player");
+                            setDefenceThree("Player");
+                            setDefenceFour("Player");
+                            setMidOne("Player");
+                            setMidTwo("Player");
+                            setMidThree("Player");
+                            setMidFour("Player");
+                            setMidFive("Player");
+                            setForwOne("Player");
+                            setForwTwo("Player");
+                            setForwThree("Player");
+                            setJokerOne("Player");
+                            setJokerTwo("Player");
+                            setJokerThree("Player");
+
+                            setMoney(400);
+                        }
                     }}
                 >
                     <img className="h-6 lg:h-7 xl:h-8" alt="log-out" src={require("../assets/icons/17.png")} />
                 </button>
             </div>
-        </div>
+        </div >
     );
 }
 
