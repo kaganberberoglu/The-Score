@@ -10,7 +10,7 @@ import Clubs from "./Clubs";
 import "./SweetAlert.css";
 
 const HomePage = () => {
-    const { changeLang, loading, theme, controlUsername, setMatch, setRivalTotalScore, setYourTotalScore, setShowNumberOne, setShowNumberTwo, setShowNumberThree, setShowNumberFour, setShowNumberFive, setShowNumberSix, setShowNumberSeven, setShowNumberEight, setShowNumberNine, setShowNumberTen, setShowNumberEleven, setNumberOne, setNumberTwo, setNumberThree, setNumberFour, setNumberFive, setNumberSix, setNumberSeven, setNumberEight, setNumberNine, setNumberTen, setNumberEleven, setNumberTwelve, setNumberThirteen, setNumberFourteen, setNumberFifteen, teamCalc, setGoalkeeperOne, setGoalkeeperTwo, setDefenceOne, setDefenceTwo, setDefenceThree, setDefenceFour, setMidOne, setMidTwo, setMidThree, setMidFour, setMidFive, setForwOne, setForwTwo, setForwThree, setJokerOne, setJokerTwo, setJokerThree, setMoney } = useContext(AppContext);
+    const { changeLang, loading, theme, setMatch, setRivalTotalScore, setYourTotalScore, setShowNumberOne, setShowNumberTwo, setShowNumberThree, setShowNumberFour, setShowNumberFive, setShowNumberSix, setShowNumberSeven, setShowNumberEight, setShowNumberNine, setShowNumberTen, setShowNumberEleven, setNumberOne, setNumberTwo, setNumberThree, setNumberFour, setNumberFive, setNumberSix, setNumberSeven, setNumberEight, setNumberNine, setNumberTen, setNumberEleven, setNumberTwelve, setNumberThirteen, setNumberFourteen, setNumberFifteen, teamCalc, setGoalkeeperOne, setGoalkeeperTwo, setDefenceOne, setDefenceTwo, setDefenceThree, setDefenceFour, setMidOne, setMidTwo, setMidThree, setMidFour, setMidFive, setForwOne, setForwTwo, setForwThree, setJokerOne, setJokerTwo, setJokerThree, setMoney } = useContext(AppContext);
 
     const navigate = useNavigate();
 
@@ -32,10 +32,6 @@ const HomePage = () => {
                     <div className="flex justify-center p-4">
                         <div className="grid justify-items-center">
                             <div className={theme ? "bg-sky-700 py-10 px-6 md:py-12 md:px-8 lg:py-12 lg:px-8 xl:py-12 xl:px-8 rounded font-medium drop-shadow-lg" : "bg-sky-300 py-10 px-6 md:py-12 md:px-8 lg:py-12 lg:px-8 xl:py-12 xl:px-8 rounded font-medium drop-shadow-lg"}>
-                                <p className={theme ? "text-white text-lg md:text-xl lg:text-2xl xl:text-3xl" : "text-lg md:text-xl lg:text-2xl xl:text-3xl"}>
-                                    {changeLang ? "Selam" : "Hi"} <span className="font-bold">{controlUsername}!</span>
-                                </p>
-                                <br />
                                 <p className={theme ? "text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl" : "text-xl md:text-2xl lg:text-3xl xl:text-4xl"}>
                                     {changeLang ? "Oyuncularını seç," : "Choose your players,"}
                                 </p>
@@ -140,7 +136,7 @@ const HomePage = () => {
                                                 cancelButtonText: changeLang ? "Vazgeç" : "Cancel"
                                             }).then((result) => {
                                                 if (result.isConfirmed) {
-                                                    navigate("/league-selection");
+                                                    navigate("/");
                                                     setMatch(false);
                                                     setRivalTotalScore(0);
                                                     setYourTotalScore(0);
@@ -495,7 +491,7 @@ const HomePage = () => {
                                                 }
                                             });
                                         } else {
-                                            navigate("/league-selection");
+                                            navigate("/");
                                             setMatch(false);
                                             setRivalTotalScore(0);
                                             setYourTotalScore(0);

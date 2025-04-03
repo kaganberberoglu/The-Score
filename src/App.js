@@ -7,8 +7,6 @@ import { faHandsClapping, faTriangleExclamation, faCircleInfo } from '@fortaweso
 import { AppContext } from './AppContext';
 import data from "./data/data.json";
 import useLocalStorage from "./useLocalStorage.js";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
 import LeagueSelection from "./components/LeagueSelection";
 import HomePage from "./components/HomePage";
 import LeagueTable from "./components/LeagueTable";
@@ -20,15 +18,6 @@ import Play from "./components/Play";
 import Versus from "./components/Versus";
 
 const App = () => {
-    const [loginEmail, setLoginEmail] = useLocalStorage("Login Email", "");
-    const [loginPassword, setLoginPassword] = useLocalStorage("Login Password", "");
-    const [email, setEmail] = useState("");
-    const [controlEmail, setControlEmail] = useLocalStorage("Control Email", "");
-    const [username, setUsername] = useState("");
-    const [controlUsername, setControlUsername] = useLocalStorage("Control Username", "");
-    const [password, setPassword] = useState("");
-    const [controlPassword, setControlPassword] = useLocalStorage("Control Password", "");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [changeLang, setChangeLang] = useLocalStorage("Language", false);
     const [theme, setTheme] = useLocalStorage("Theme", false);
@@ -4419,12 +4408,10 @@ const App = () => {
     const [chanceNumber, setChanceNumber] = useState();
 
     return (
-        <AppContext.Provider value={{ changeLang, setChangeLang, theme, setTheme, loading, setLoading, leagueName, setLeagueName, clubName, setClubName, loginEmail, setLoginEmail, loginPassword, setLoginPassword, email, setEmail, username, setUsername, password, setPassword, confirmPassword, setConfirmPassword, controlEmail, setControlEmail, controlUsername, setControlUsername, controlPassword, setControlPassword, changeLanguage, teams, players, selectPlayers, dropPlayers, selectedPlayers, teamCalc, coinCalc, lineupAfterDrop, goalkeeperOne, setGoalkeeperOne, goalkeeperTwo, setGoalkeeperTwo, defenceOne, setDefenceOne, defenceTwo, setDefenceTwo, defenceThree, setDefenceThree, defenceFour, setDefenceFour, midOne, setMidOne, midTwo, setMidTwo, midThree, setMidThree, midFour, setMidFour, midFive, setMidFive, forwOne, setForwOne, forwTwo, setForwTwo, forwThree, setForwThree, jokerOne, setJokerOne, jokerTwo, setJokerTwo, jokerThree, setJokerThree, notRandomTeam, setNotRandomTeam, randomTeam, setRandomTeam, selectedTeam, buildTeam, tactic, setTactic, accordionNumberOne, setAccordionNumberOne, accordionNumberTwo, setAccordionNumberTwo, accordionNumberThree, setAccordionNumberThree, accordionNumberFour, setAccordionNumberFour, accordionNumberFive, setAccordionNumberFive, accordionNumberSix, setAccordionNumberSix, accordionNumberSeven, setAccordionNumberSeven, accordionNumberEight, setAccordionNumberEight, accordionNumberNine, setAccordionNumberNine, accordionNumberTen, setAccordionNumberTen, accordionNumberEleven, setAccordionNumberEleven, vsPlayerForUser, setVsPlayerForUser, vsPlayerForRival, setVsPlayerForRival, showNumberOne, showNumberTwo, showNumberThree, showNumberFour, showNumberFive, showNumberSix, showNumberSeven, showNumberEight, showNumberNine, showNumberTen, showNumberEleven, setShowNumberOne, setShowNumberTwo, setShowNumberThree, setShowNumberFour, setShowNumberFive, setShowNumberSix, setShowNumberSeven, setShowNumberEight, setShowNumberNine, setShowNumberTen, setShowNumberEleven, number, setNumber, match, setMatch, readyToMatch, setReadyToMatch, yourTotalScore, setYourTotalScore, rivalTotalScore, setRivalTotalScore, level, setLevel, randomNumber, chanceNumber, setChanceNumber, setMoney, money, setNumberOne, setNumberTwo, setNumberThree, setNumberFour, setNumberFive, setNumberSix, setNumberSeven, setNumberEight, setNumberNine, setNumberTen, setNumberEleven, setNumberTwelve, setNumberThirteen, setNumberFourteen, setNumberFifteen }}>
+        <AppContext.Provider value={{ changeLang, setChangeLang, theme, setTheme, loading, setLoading, leagueName, setLeagueName, clubName, setClubName, changeLanguage, teams, players, selectPlayers, dropPlayers, selectedPlayers, teamCalc, coinCalc, lineupAfterDrop, goalkeeperOne, setGoalkeeperOne, goalkeeperTwo, setGoalkeeperTwo, defenceOne, setDefenceOne, defenceTwo, setDefenceTwo, defenceThree, setDefenceThree, defenceFour, setDefenceFour, midOne, setMidOne, midTwo, setMidTwo, midThree, setMidThree, midFour, setMidFour, midFive, setMidFive, forwOne, setForwOne, forwTwo, setForwTwo, forwThree, setForwThree, jokerOne, setJokerOne, jokerTwo, setJokerTwo, jokerThree, setJokerThree, notRandomTeam, setNotRandomTeam, randomTeam, setRandomTeam, selectedTeam, buildTeam, tactic, setTactic, accordionNumberOne, setAccordionNumberOne, accordionNumberTwo, setAccordionNumberTwo, accordionNumberThree, setAccordionNumberThree, accordionNumberFour, setAccordionNumberFour, accordionNumberFive, setAccordionNumberFive, accordionNumberSix, setAccordionNumberSix, accordionNumberSeven, setAccordionNumberSeven, accordionNumberEight, setAccordionNumberEight, accordionNumberNine, setAccordionNumberNine, accordionNumberTen, setAccordionNumberTen, accordionNumberEleven, setAccordionNumberEleven, vsPlayerForUser, setVsPlayerForUser, vsPlayerForRival, setVsPlayerForRival, showNumberOne, showNumberTwo, showNumberThree, showNumberFour, showNumberFive, showNumberSix, showNumberSeven, showNumberEight, showNumberNine, showNumberTen, showNumberEleven, setShowNumberOne, setShowNumberTwo, setShowNumberThree, setShowNumberFour, setShowNumberFive, setShowNumberSix, setShowNumberSeven, setShowNumberEight, setShowNumberNine, setShowNumberTen, setShowNumberEleven, number, setNumber, match, setMatch, readyToMatch, setReadyToMatch, yourTotalScore, setYourTotalScore, rivalTotalScore, setRivalTotalScore, level, setLevel, randomNumber, chanceNumber, setChanceNumber, setMoney, money, setNumberOne, setNumberTwo, setNumberThree, setNumberFour, setNumberFive, setNumberSix, setNumberSeven, setNumberEight, setNumberNine, setNumberTen, setNumberEleven, setNumberTwelve, setNumberThirteen, setNumberFourteen, setNumberFifteen }}>
             <div>
                 <Routes>
-                    <Route exact="true" path="/" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/league-selection" element={<LeagueSelection />} />
+                    <Route exact="true" path="/" element={<LeagueSelection />} />
                     <Route path="/league" element={<HomePage />} />
                     <Route path="/league/table" element={<LeagueTable />} />
                     <Route path="/league/:Team" element={<ClubPlayers />} />
