@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .toast-message-sm {
+        font-size: 11px;
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .toast-message-md {
+        font-size: 13px;
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .toast-message-lg {
+        font-size: 14px;
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .toast-message-xl {
+        font-size: 15px;
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .toast-message-2xl {
+        font-size: 15px;
+        width: 25%;
+    }
+}

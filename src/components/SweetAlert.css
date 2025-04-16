@@ -1,0 +1,17 @@
+@media screen and (max-width: 1024px) {
+    .sweet-alert {
+        font-size: 8px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .sweet-alert {
+        font-size: 10px !important;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .sweet-alert {
+        font-size: 14px !important;
+    }
+}
